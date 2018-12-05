@@ -1,0 +1,5 @@
+has_hyphen,has_bracket,is_alpha_num,is_hexa_decimal,is_guid_pattern,field_len,token_1_len,token_2_len,token_3_len,token_4_len,token_5_len,label
+1,0,1,1,0,25,8,4,4,4,5,other
+1,0,1,1,0,29,8,4,1,4,12,other
+0,0,1,0,0,10,0,0,0,0,0,other
+1,0,1,0,0,23,3,3,7,4,6,other
