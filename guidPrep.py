@@ -10,7 +10,7 @@ import pandas as pd
 import string
 
 
-input_data_columns=['guid','other']
+#input_data_columns=['guid','other']
 output_field = ['has_hyphen','has_bracket','is_alpha_num','is_hexa_decimal','is_guid_pattern',
                 'field_len','token_1_len','token_2_len','token_3_len','token_4_len', 'token_5_len','label']
 
@@ -117,8 +117,6 @@ def generate_feature_list(data,colName):
             tokensDict[i] = get_field_len(tokens[i])
     return (hyphen,bracket,alphanum,hexa_deci,guid_pattern, field_len, tokensDict[0],tokensDict[1],tokensDict[2],tokensDict[3],tokensDict[4], colName)
 
-    return 0
-
 def prepareData(input_file_path, feature_engg_data_path):
     df = read_csv(input_file_path)
     cols = df.columns.values
@@ -129,6 +127,7 @@ def prepareData(input_file_path, feature_engg_data_path):
             each_row = generate_feature_list(colData,eachColName)
             total_row_list.append(each_row)
     writeToFile(total_row_list, feature_engg_data_path)
+    return cols
 
 
 def writeToFile(total_row_list, feature_engg_data_path):
@@ -143,7 +142,7 @@ def writeToFile(total_row_list, feature_engg_data_path):
 
 def main():
     print("Main")
-    prepareData()
+    #prepareData()
 
 
 if __name__ == '__main__':
